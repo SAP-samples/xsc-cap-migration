@@ -1,0 +1,13 @@
+{
+    "role": {
+        "name": "SAP_HANA_DEMOCONTENT_EPM_PUBLICACCESSSCHEMA",
+        "schema_privileges": [
+            {
+                "privileges": [
+                    "SELECT",
+                    "EXECUTE"
+                ]
+            }
+        ]
+    }
+}

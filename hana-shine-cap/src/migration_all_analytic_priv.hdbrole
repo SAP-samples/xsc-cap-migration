@@ -1,0 +1,12 @@
+{
+    "role": {
+        "name": "MIGRATION_ALL_ANALYTIC_PRIV",
+        "schema_analytic_privileges": [
+            {
+                "privileges": [
+                    "SAP_HANA_DEMOCONTENT_EPM_MIGRATION_ALL_PRIV"
+                ]
+            }
+        ]
+    }
+}
