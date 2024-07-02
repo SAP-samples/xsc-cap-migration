@@ -155,7 +155,7 @@ And the following additional properties:
   <img width="544" alt="DestinationList" src="images\destinationList.png">
 </p>
 
-4. Enter the user credentials for the SAP HANA Database Migration User - username and password - into their respective fields. Hit the login button to authorize these credentials.
+4. Enter the user credentials for the SAP HANA Database Migration User - username and password - into their respective fields. Hit the login button to authorize these credentials.[Procedure to create migration user](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/2786447387df41f69a0dad1cc2973e95.html#procedure)
 	
 <p align="center">
 <img width="545" alt="Login" src="images\login.png">
