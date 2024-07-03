@@ -111,11 +111,10 @@ Navigate to the BTP Cloud Foundry subaccount and select 'Destination' under 'Con
  
  - **Name**: < Destination name >
  - **Type**: HTTP
- - **URL**: `https://<internal-host>:<internal-port-no>/`
+ - **URL**: `https://<virtual-host>:<virtual-port-no>/`
  - **ProxyType**: on-premise
- - **Authentication**: Basic Authentication
+ - **Authentication**: NoAuthentication
  - **Locationid**: Location id as mentioned in cloud connector
- - **User and Password**: SAP Hana Database login credentials 
 
 And the following additional properties: 
  - **HTML5.DynamicDestination** : true
