@@ -345,6 +345,7 @@ Once the project is created, there are some adjustments we need to make manually
     ```
  7. Adjust SQL syntax in procedures. For instance, "UPDATE FROM" should be changed to "MERGE INTO", and "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
  8. Currently, changes to Flowgraph, Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-overview-guide/sap-hana-cloud-overview-guide) for more details on how to handle these.
+ 9. From the root folder of the target CAP application, run `cds add mta`
     
 ## Step-6: Deployment of the Migrated database artifacts.
 
@@ -397,6 +398,22 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
 4. Following Artifacts are not currently supported '.hdbreptask', '.hdbvirtualtable', '.hdbflowgraph'
 
 5. If the source files have any errors, the migration of the Delivery Unit or Package by the SAP HANA Application Migration Assistant will fail. For example: If the javascript files have unknown characters like ```NUL```, the migration will fail with errors. Please check the output logs for the error messages.
+
+## Data Migration
+
+### Prerequisites:
+1. Ensure you have access to the SQL Console in your source system.
+2. Verify that your target CAP application is already deployed and that all necessary tables have been created in the target database.
+
+### Steps for Data Migration:
+1. Open the <Project_Name>_DataMigration.sql file located in the root directory of your CAP project.
+2. Replace <MIGRATION_USER> with the correct username for the migration.
+3. Replace <password> with the password for the migration user.
+4. Replace <TARGET_SCHEMA_NAME> with the schema name of your target CAP application.
+5. Open the SQL Console in your source system, Copy the entire content of the <Project_Name>_DataMigration.sql file and Paste the copied content into the SQL Console.
+6. Click on the "Run" button to execute the script.
+
+These steps will help you migrate the data from your source system to the target CAP application.
 
 ## Learning Resources
 1. [Prepare XS Classic Artifacts for Migration](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/a759b4815ae246649c83365cbcede79b.html).
