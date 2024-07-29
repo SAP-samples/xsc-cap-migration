@@ -419,7 +419,7 @@ Follow the [SAP HANA Self Service Migration Tool](https://help.sap.com/docs/hana
 
 #### **Note:** 
 ```
-1. Prerequisites is already done by above <Project_Name>_DataMigration.sql, skip the Prerequisites of creating migration user.
+1. Prerequisites is already done by above <Project_Name>_DataMigration.sql, skip the Prerequisites of creating source migration user.
 ```
 
 ## Learning Resources
