@@ -415,7 +415,7 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
 7. For each schema that you want to migrate,the owner of the schema or any user who has the permissions to grant the required privileges must execute the following statement:
    	`GRANT SELECT ON SCHEMA "<SCHEMA_NAME>" TO <MIGRATION_USER>;`
 
-Follow the [SAP HANA Self Service Migration Tool](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/migrate-sap-hana-service-database-neo-to-sap-hana-cloud)steps will help you migrate the data from your source system to the target CAP application.
+Follow the [SAP HANA Self Service Migration Tool](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/migrate-sap-hana-service-database-neo-to-sap-hana-cloud) steps will help you migrate the data from your source system to the target CAP application.
 
 #### **Note:** 
 ```
