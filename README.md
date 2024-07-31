@@ -345,6 +345,7 @@ Once the project is created, there are some adjustments we need to make manually
     ```
  7. Adjust SQL syntax in procedures. For instance, "UPDATE FROM" should be changed to "MERGE INTO", and "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
  8. Currently, changes to Flowgraph, Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-overview-guide/sap-hana-cloud-overview-guide) for more details on how to handle these.
+ 9. From the root folder of the target CAP application, run `cds add mta`
     
 ## Step-6: Deployment of the Migrated database artifacts.
 
@@ -397,6 +398,32 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
 4. Following Artifacts are not currently supported '.hdbreptask', '.hdbvirtualtable', '.hdbflowgraph'
 
 5. If the source files have any errors, the migration of the Delivery Unit or Package by the SAP HANA Application Migration Assistant will fail. For example: If the javascript files have unknown characters like ```NUL```, the migration will fail with errors. Please check the output logs for the error messages.
+
+## Data Migration
+
+### Prerequisites:
+
+1. Verify that your target CAP application is already deployed and that all necessary tables have been created in the target database.
+2. You have access to an SQL console that is connected to the source (XS classic) database used for the migration.
+3. For each schema that you want to migrate, the owner of the migrated schema (or any user who has the permissions to grant the necessary privileges) must grant the migration user the privileges required to access the schema containing the data to be migrated, for example, by running the following SQL statement:
+   	`GRANT SELECT ON SCHEMA "<SCHEMA_NAME>" TO <MIGRATION_USER>;`
+
+### Steps for Data Migration:
+1. Open the <Project_Name>_DataMigration.sql file located in the root directory of your CAP project.
+2. Replace <MIGRATION_USER> with the correct username for the migration.
+3. Replace <password> with the password for the migration user.
+4. Replace <TARGET_SCHEMA_NAME> with the schema name of your target CAP application.
+5. Open the SQL Console in your source system, Copy the entire content of the <Project_Name>_DataMigration.sql file and Paste the copied content into the SQL Console.
+6. Click on the "Execute" button to run the script. 	
+
+Follow the [SAP HANA Self Service Migration Tool](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/migrate-sap-hana-service-database-neo-to-sap-hana-cloud) steps will help you migrate the data from your source system to the target CAP application.
+
+#### **Note:** 
+```
+1. Prerequisites is already done by above <Project_Name>_DataMigration.sql, skip the Prerequisites of creating source migration user.
+2. Granting SAP_INTERNAL_HANA_SUPPORT TO migration user is only required when migrating SAP HANA databases in the Neo environment, please remove when migrating from on-premise SAP HANA databases
+3. Incase of issue with assigning SAP_INTERNAL_HANA_SUPPORT role to user please find NOTE: https://me.sap.com/notes/0002971325
+```
 
 ## Learning Resources
 1. [Prepare XS Classic Artifacts for Migration](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/a759b4815ae246649c83365cbcede79b.html).
