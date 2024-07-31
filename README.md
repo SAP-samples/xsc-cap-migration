@@ -402,8 +402,11 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
 ## Data Migration
 
 ### Prerequisites:
-1. Ensure you have access to the SQL Console in your source system.
-2. Verify that your target CAP application is already deployed and that all necessary tables have been created in the target database.
+
+1. Verify that your target CAP application is already deployed and that all necessary tables have been created in the target database.
+2. You have access to an SQL console that is connected to the source (XS classic) database used for the migration.
+3. For each schema that you want to migrate, the owner of the migrated schema (or any user who has the permissions to grant the necessary privileges) must grant the migration user the privileges required to access the schema containing the data to be migrated, for example, by running the following SQL statement:
+   	`GRANT SELECT ON SCHEMA "<SCHEMA_NAME>" TO <MIGRATION_USER>;`
 
 ### Steps for Data Migration:
 1. Open the <Project_Name>_DataMigration.sql file located in the root directory of your CAP project.
@@ -411,9 +414,7 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
 3. Replace <password> with the password for the migration user.
 4. Replace <TARGET_SCHEMA_NAME> with the schema name of your target CAP application.
 5. Open the SQL Console in your source system, Copy the entire content of the <Project_Name>_DataMigration.sql file and Paste the copied content into the SQL Console.
-6. Click on the "Execute" button to run the script.
-7. For each schema that you want to migrate,the owner of the schema or any user who has the permissions to grant the required privileges must execute the following statement:
-   	`GRANT SELECT ON SCHEMA "<SCHEMA_NAME>" TO <MIGRATION_USER>;`
+6. Click on the "Execute" button to run the script. 	
 
 Follow the [SAP HANA Self Service Migration Tool](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/migrate-sap-hana-service-database-neo-to-sap-hana-cloud) steps will help you migrate the data from your source system to the target CAP application.
 
