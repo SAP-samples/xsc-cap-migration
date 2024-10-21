@@ -76,28 +76,28 @@ Once the necessary privileges are assigned, follow the below steps:
 1. Open the Command palette and type, “SAP HANA Application Migration Assistant” and select the command when it appears.
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/ed606d81-0fe1-4a8e-9f76-74b23353a7e4" width="700" height="150">
+<img src="images\SAPHanaMigrationAssistant.png" width="700" height="150">
 </p>
 
 
 2. When the migration wizard opens, select the Data Migration Configuration Template as shown below:
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/2760918b-fe28-41d4-bd25-509bf3b2dff4" width="600" height="400">
+<img src="images\DataMigrationTemplate.png" width="600" height="400">
 </p>
 
 
 3. In the Data Source Page of the wizard, choose the destination that you previously created from the Dropdown menu as shown below:
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/d5d64582-5892-4e08-93a2-d4749ae33d33" width="600" height="400">
+<img src="images\Destinations_DM.png" width="600" height="400">
 </p>
 
 
 4. Enter the user credentials for the SAP HANA Database Migration User – username and password – into their respective fields. Hit the login button to authorize these credentials.
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/7ceb71f7-efd9-4f8b-bdeb-e5d40cdd9cdd" width="600" height="400">
+<img src="images\UserCredentials_DM.png" width="600" height="400">
 </p>
 
 
@@ -106,7 +106,7 @@ Once the necessary privileges are assigned, follow the below steps:
 6. In the Data Migration Configuration Page of the wizard, select the Data migration configuration sql file from the drop down menu, which would have been created as part of your migrated projects.
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/efbdfddb-8dc8-4d79-a3bb-e941dfe016c9" width="600" height="400">
+<img src="images\sqlFile_DM.png" width="600" height="400">
 </p>
 
 
@@ -115,7 +115,7 @@ Once the necessary privileges are assigned, follow the below steps:
 8. In the next field as shown below, enter the data migration user name which was created earlier and for which the necessary privileges were granted. Make sure the user already exists else a error message will be thrown to create the user and assign necessary privileges.
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/9d82e310-8827-4653-bce5-ef2bf6f1405e" width="600" height="400">
+<img src="images\MigUser_DM.png" width="600" height="400">
 </p>
 
 9. Click on the finish button.
