@@ -378,6 +378,9 @@ Once the project is created, there are some adjustments we need to make manually
    ```
 8. To deploy your application, select the "Deploy" button located in the "SAP HANA Projects" section.
 
+## Data Migration
+For migration of data using the SAP HANA Application Migration Assistant, please refer to the [DataMigration](DataMigration.md) document.
+
 ## Known Issues in SAP HANA Application Migration Assistant
 - If the package name provided does not exist in the source system, the migration process will still continue without any disruption. In this case, a template project without any artifacts will be created.
 - In the SAP Hana Migration Assistant, even if you change your password after a successful login, it will not update in the environment even though it appears updated in the user interface. The Assistant retrieves it from the environment and the Migration proceeds without issue. If you wish to confirm the password change, after altering the password field, simply click the login button. This will update the password in the environment.
