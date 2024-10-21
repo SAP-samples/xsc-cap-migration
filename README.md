@@ -344,7 +344,7 @@ Once the project is created, there are some adjustments we need to make manually
     }
     ```
  7. Adjust SQL syntax in procedures. For instance, "UPDATE FROM" should be changed to "MERGE INTO", and "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
- 8. Currently, changes to Flowgraph, Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-overview-guide/sap-hana-cloud-overview-guide) for more details on how to handle these.
+ 8. Currently, changes to Flowgraph, Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
     
 ## Step-6: Deployment of the Migrated database artifacts.
 
