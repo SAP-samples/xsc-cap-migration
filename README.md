@@ -77,7 +77,7 @@ To successfully migrate the HCO_DEMOCONTENT sample delivery unit using the SAP H
 	
    - **HANA Instance Name**: < DB/Schema ID >
 	
-   - **Local Instance Number**: Input any two-digit number between 00 and 09. This number is used to compute the port number needed to access the SAP instance in the Hana Cloud. The local port is calculated from the local instance number (3<n<15). For example, if the number is 7, then the local port would be 30715.
+   - **Local Instance Number**: Input any two-digit number between 00 and 09. This number is used to compute the port number needed to access the SAP instance in the SAP Hana Cloud. The local port is calculated from the local instance number (3<n<15). For example, if the number is 7, then the local port would be 30715.
 	
    - **Connections**: 1
 
