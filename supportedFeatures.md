@@ -38,7 +38,7 @@
   
 - Updates .hdinamespace file with the proper configuration.
   
-- Rename the other Hana database artifacts to SAP CAP CDS supported format. Specifically, entities should be converted to uppercase and any instances of “.”, “::” should be replaced with “_”.
+- Rename the other SAP Hana database artifacts to SAP CAP CDS supported format. Specifically, entities should be converted to uppercase and any instances of “.”, “::” should be replaced with “_”.
   
 - Copy the UI/ web folder into CAP Application.
   
