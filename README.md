@@ -3,7 +3,7 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/xsc-cap-migration)](https://api.reuse.software/info/github.com/SAP-samples/xsc-cap-migration)
 
 ## Description
-The SAP HANA Application Migration Assistant allows users to migrate XS Classic application which is packaged as a Delivery Unit or a Package to a CAP application with SAP HANA Cloud as a database. In this sample, only conversion of Source XSC Repository database artifacts to the corresponding target CAP compliance database artifacts are listed.
+The SAP HANA Application Migration Assistant allows users to migrate XS Classic application which is packaged as a Delivery Unit or a Package to a CAP application with SAP HANA Cloud as a database. In this sample, only conversion of Source XS Classic Repository database artifacts to the corresponding target CAP compliance database artifacts are listed.
 
 ## Introduction
 SAP HANA Interactive Education or SHINE is a demo application that is packaged as [HCO_DEMOCONTENT](https://github.com/SAP-samples/hana-shine/releases/download/v2.5.0/HCO_DEMOCONTENT-1.205.0.tgz) Delivery Unit. It includes the following features: 
@@ -24,7 +24,7 @@ SAP HANA Interactive Education or SHINE is a demo application that is packaged a
   - Structured Privilege
   - Analytical Privilege
 
-HCO_DEMOCONTENT follows the XS Classic Programming Model(XSC) and uses SAP HANA on-premise for the database. This article describes the steps to be followed to Migrate this Delivery Unit from XSC to the Cloud Application Programming Model(CAP) with SAP HANA Cloud as the database using the SAP HANA Application Migration Assistant.
+HCO_DEMOCONTENT follows the XS Classic Programming Model(XSC) and uses SAP HANA on-premise for the database. This article describes the steps to be followed to Migrate this Delivery Unit from XS Classic to the Cloud Application Programming Model(CAP) with SAP HANA Cloud as the database using the SAP HANA Application Migration Assistant.
 
 ### Solution Diagram of SAP HANA Application Migration Assistant
 
@@ -33,7 +33,7 @@ HCO_DEMOCONTENT follows the XS Classic Programming Model(XSC) and uses SAP HANA 
 </p>
 
 ## Requirements
-- XSC on-premise database source system with the [HCO_DEMOCONTENT](https://github.com/SAP-samples/hana-shine/releases/download/v2.5.0/HCO_DEMOCONTENT-1.205.0.tgz) delivery unit.
+- XS Classic on-premise database source system with the [HCO_DEMOCONTENT](https://github.com/SAP-samples/hana-shine/releases/download/v2.5.0/HCO_DEMOCONTENT-1.205.0.tgz) delivery unit.
 - SAP Business Technology Platform subaccount with `SAP Hana Cloud` and `SAP Hana Schemas and HDI Containers` service instances .
 - SAP Business Application Studio Subscription.
 - SAP Cloud Connector
@@ -141,7 +141,7 @@ And the following additional properties:
 
 1. Open the the Command Palette and type "SAP HANA Application Migration Assistant" and select the command when it appears.
 	
-2. When the Migration Assistant Wizard opens, select the migration path. Since we are migrating from XSC to CAP, select `XSC to CAP` as your migration path.		
+2. When the Migration Assistant Wizard opens, select the migration path. Since we are migrating from XS Classic to CAP, select `XSC to CAP` as your migration path.		
 
 <p align="center">
   <img width="536" alt="HomeScreen" src="images\homescreen.png">
@@ -204,7 +204,7 @@ And the following additional properties:
 
 ## Step-5: Post Migration Changes
 Once the project is created, there are some adjustments we need to make manually as these are not currently handled by the Assistant. We have provided the changed files for [HCO_DEMOCONTENT](https://github.com/SAP-samples/xsc-cap-migration/tree/main/hana-shine-cap-final) for reference.
- 1. If your project contains any files from a different schema, these need to be migrated before migrating the current Delivery Unit and included in this project. If this can't be done immediately, you can remove them for the time being. To utilize objects from other containers, please refer to the HANA Cloud help documentation and configure accordingly.
+ 1. If your project contains any files from a different schema, these need to be migrated before migrating the current Delivery Unit and included in this project. If this can't be done immediately, you can remove them for the time being. To utilize objects from other containers, please refer to the SAP HANA Cloud help documentation and configure accordingly.
     
     For the HCO_DEMOCONTENT project, make the following changes:
     - Delete the uis folder from db/cfg
