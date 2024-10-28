@@ -121,7 +121,7 @@ Once the necessary privileges are assigned, follow the below steps:
 9. Once the finish button is clicked, the content of the DataMigration.sql file in your project is executed and the pop-up message, "Data migration Configuration completed successfully" appears if there are no errors.
 
 <p align="center">
-<img src="images\completeDM.png" width="600" height="400">
+<img src="images\schemaDM2.png" width="600" height="400">
 </p>
 
 
