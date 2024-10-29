@@ -29,7 +29,7 @@ HCO_DEMOCONTENT follows the XS Classic Programming Model(XSC) and uses SAP HANA 
 ### Solution Diagram of SAP HANA Application Migration Assistant
 
 <p align="center">
-<img src="images\solutionDiagram.png">
+<img src="images\SolutionDiagramNew.png">
 </p>
 
 ## Requirements
