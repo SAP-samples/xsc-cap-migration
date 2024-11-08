@@ -239,9 +239,9 @@ Once the project is created, there are some adjustments we need to make manually
  4. The assistant will modify the name of the artifacts in your project. Therefore, ensure to update the references to these artifacts accordingly.
     - For the HCO_DEMOCONTENT project, you'll need to adjust the references for entities under the `currencyConversionTables` tag. This is located in the `db/src/models/PURCHASE_COMMON_CURRENCY.hdbcalculationview` file. Make the changes as follows:
 
-    ```
-    <currencyConversionTables rates="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURR" configuration="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURV" prefactors="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURF" notations="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURN" precisions="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURX"/>
-    ```
+      ```
+      <currencyConversionTables rates="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURR" configuration="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURV" prefactors="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURF" notations="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURN" precisions="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURX"/>
+      ```
     - In the `db/src/models/AP_PURCHASE_ORDER_PROD_CAT_2.hdbanalyticprivilege` file, please change the `ProductCategory` in the filter tag to `CATEGORY`
 
  5.  Unused configurations should be removed from hdbrole files, or these files should be adjusted to add supported options.
@@ -342,6 +342,9 @@ Once the project is created, there are some adjustments we need to make manually
  8. Currently, changes to Flowgraph, Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
  9.  Series entity is not supported in Hana Cloud so they will be removed by the extension. Please check [Migration Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/series-data%22) for more information.
  10. For HdbSynonym, HdbSynonymconfig and Hdbrole files, please check target object parameters before deployment.
+     - In `db/cfg/models/synonym-grantor-service.hdbsynonymconfig` file, Change the `target.object` from `sap.hana.democontent.epm.models::SALES_ORDER_RANKING` to `SAP_HANA_DEMOCONTENT_EPM_MODELS_SALES_ORDER_RANKING`.
+     - In `db/src/roles/Admin.hdbrole` file, Change the role name from `sap.hana.democontent.epm.roles::Admin` to `SAP_HANA_DEMOCONTENT_EPM_ROLES_ADMIN`.
+     - In `db/src/roles/User.hdbrole` file, Change the role name from `sap.hana.democontent.epm.roles::User` to `SAP_HANA_DEMOCONTENT_EPM_ROLES_USER`.
     
     
 ## Step-6: Deployment of the Migrated database artifacts.
