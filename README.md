@@ -208,6 +208,7 @@ Once the project is created, there are some adjustments we need to make manually
     - Delete the uis folder from db/cfg
     - Delete `synonym-grantor-service.hdbgrants` and `synonym-grantor-service.hdbsynonymconfig` from db/cfg
     - Delete `synonym-grantor-service.hdbsynonym` from db/src/uis/db
+    - Delete `synonym-grantor-service.hdbsynonym` from db/src/models
  2. In order to access objects from other public schemas, you will need to either create a new hdbsynonym file or modify an existing one.
     For the HCO_DEMOCONTENT project, edit the `db/src/synonym-grantor-service.hdbsynonym` file with the following configuration:
     ```
@@ -234,11 +235,15 @@ Once the project is created, there are some adjustments we need to make manually
     ```
  3. In addition, please take the time to clear out unused role names from the `default_access_role.hdbrole` file located in the db/src/defaults folder. If there are specific roles required for your project, ensure to add them as needed.
     For the HCO_DEMOCONTENT project, Remove `SAP_HANA_DEMOCONTENT_EPM_MIGRATION_ALL_ANALYTIC_PRIV` role under names. 
- 4. The SAP HANA Application Migration Assistant will modify the name of the artifacts in your project. Therefore, ensure to update the references to these artifacts accordingly.
-    For the HCO_DEMOCONTENT project, you'll need to adjust the references for entities under the `currencyConversionTables` tag. This is located in the `db/src/models/PURCHASE_COMMON_CURRENCY.hdbcalculationview` file. Make the changes as follows:
+    
+ 4. The assistant will modify the name of the artifacts in your project. Therefore, ensure to update the references to these artifacts accordingly.
+    - For the HCO_DEMOCONTENT project, you'll need to adjust the references for entities under the `currencyConversionTables` tag. This is located in the `db/src/models/PURCHASE_COMMON_CURRENCY.hdbcalculationview` file. Make the changes as follows:
+
     ```
     <currencyConversionTables rates="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURR" configuration="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURV" prefactors="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURF" notations="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURN" precisions="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURX"/>
     ```
+    - In the `db/src/models/AP_PURCHASE_ORDER_PROD_CAT_2.hdbanalyticprivilege` file, please change the `ProductCategory` in the filter tag to `CATEGORY`
+
  5.  Unused configurations should be removed from hdbrole files, or these files should be adjusted to add supported options.
      For the HCO_DEMOCONTENT project, make the following alterations:
      - In `db/src/roles/User.hdbrole`, eliminate the following unused configurations:
@@ -310,21 +315,13 @@ Once the project is created, there are some adjustments we need to make manually
              "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_PURCHASE_ORDER_2",
              "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_SALES_ORDER_10",
              "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_PURCHASE_ORDER_PROD_CAT_1",
-             "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_SALES_ORDER_16",
              "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_PURCHASE_ORDER_3",
-             "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_PURCHASE_ORDER_PROD_CAT_1_1054430",
              "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_SALES_ORDER_5",
              "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_PURCHASE_ORDER_1",
              "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_SALES_ORDER_7",
              "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_PURCHASE_ORDER_PROD_CAT_2",
              "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_PURCHASE_ORDER",
-             "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_PURCHASE_ORDER_PROD_CAT",
-             "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_SALES_ORDER_11",
-             "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_SALES_ORDER_13",
-             "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_SALES_ORDER_15",
-             "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_SALES_ORDER_8",
-             "SAP_HANA_DEMOCONTENT_EPM_MIGRATION_ALL_PRIV",
-             "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_SALES_ORDER_14"
+             "SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_PURCHASE_ORDER_PROD_CAT"
       	  ]
        }
        ],
