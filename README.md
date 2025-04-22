@@ -398,7 +398,7 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
    
 3. Creating proxy cds for cross container schema
    
-4. Following Artifacts are not currently supported '.hdbreptask', '.hdbvirtualtable', '.hdbflowgraph'
+4. Following Artifacts are not currently supported '.hdbreptask', '.hdbvirtualtable'
 
 5. If the source files have any errors, the migration of the Delivery Unit or Package by the SAP HANA Application Migration Assistant will fail. For example: If the javascript files have unknown characters like ```NUL```, the migration will fail with errors. Please check the output logs for the error messages.
 
