@@ -195,6 +195,11 @@ And the following additional properties:
 </p>
 
 10. Select the XSC Compatilibity Mode by setting it to True or False or leave it as it is to Default.
+
+<p align="center">
+<img width="545" alt="end" src="images\xscCompatibilityMode.png">
+</p>
+
 11. Once you see the pop-up notification at the bottom right corner of your screen, it means that the migration process is underway. This notification will keep you updated on all the steps that follow. At the end of the process, a SAP CAP project with the revised database artifacts will be created. Additionally, a `report.html` file will be generated within the project. This file contains detailed information about your project's migration.
 
 <p align="center">
