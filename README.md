@@ -194,7 +194,21 @@ And the following additional properties:
 <img width="545" alt="end" src="images\DeliveryUnit3.png">
 </p>
 
-10. Once you see the pop-up notification at the bottom right corner of your screen, it means that the migration process is underway. This notification will keep you updated on all the steps that follow. At the end of the process, a SAP CAP project with the revised database artifacts will be created. Additionally, a `report.html` file will be generated within the project. This file contains detailed information about your project's migration.
+10. Select the XSC Compatilibity Mode by setting it to True or False or leave it as it is to Default.
+
+<p align="center">
+<img width="545" alt="end" src="images\xscCompatibilityMode.png">
+</p>
+
+**xsc-compatibility-mode** is a view property introduced to maintain behavioral compatibility with how Calculation Views, especially those with aggregation nodes or star joins, worked in XS Classic (XSC) when migrating them to HANA Deployment Infrastructure (HDI) in XSA.
+In the SAP HANA Application Migration Assistant, the UI provides a drop down with 3 options for the xsc-compatibility-mode. 
+	They are: 
+	<li>True: Sets the value to true and enables the legacy XS Classic behaviour in CVs</li>
+ 	<li>False: Sets the value to false and adopts the native XSA behaviour</li>
+  	<li>Default: Retain the existing values for all CVs</li>
+
+
+11. Once you see the pop-up notification at the bottom right corner of your screen, it means that the migration process is underway. This notification will keep you updated on all the steps that follow. At the end of the process, a SAP CAP project with the revised database artifacts will be created. Additionally, a `report.html` file will be generated within the project. This file contains detailed information about your project's migration.
 
 <p align="center">
 <img width="545" alt="end" src="images\end.png">
