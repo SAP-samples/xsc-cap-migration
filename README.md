@@ -194,7 +194,7 @@ And the following additional properties:
 <img width="545" alt="end" src="images\DeliveryUnit3.png">
 </p>
 
-10. Select the XSC Compatilibity Mode by setting it to True or False or leave it as it is to Default.
+10. Select the XSC Compatilibity Mode by setting it to True, False or Default.
 
 <p align="center">
 <img width="545" alt="end" src="images\xscCompatibilityMode.png">
