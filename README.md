@@ -207,6 +207,7 @@ In the SAP HANA Application Migration Assistant, the UI provides a drop down wit
  	<li>False: Sets the value to false and adopts the native XSA behaviour</li>
   	<li>Default: Retain the existing values for all CVs</li>
 
+please refer to [xsCompatibilitymode](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-modeling-guide-for-sap-business-application-studio/70d331c824b5460b82c1fb7f9919ee18.html?q=compatibility).
 
 11. Once you see the pop-up notification at the bottom right corner of your screen, it means that the migration process is underway. This notification will keep you updated on all the steps that follow. At the end of the process, a SAP CAP project with the revised database artifacts will be created. Additionally, a `report.html` file will be generated within the project. This file contains detailed information about your project's migration.
 
