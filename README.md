@@ -11,7 +11,7 @@
   - [Where to Start](#where-to-start)
   - [Step-1: Install and Configure the SAP Cloud Connector](#step-1-install-and-configure-the-sap-cloud-connector)
   - [Step-2: Setup an SAP BTP Destination to connect to the source system](#step-2-setup-an-sap-btp-destination-to-connect-to-the-source-system)
-  - [Step-3: Create a SAP Business Application Studio or SAP Build Code Devspace with the SAP HANA Application Migration Assistant Extension installed](#step-3-create-a-sap-business-application-studio-or-sap-build-code-devspace-with-the-sap-hana-application-migration-assistant-extension-installed)
+  - [Step-3: Create a SAP Business Application Studio or SAP Build Devspace with the SAP HANA Application Migration Assistant Extension installed](#step-3-create-a-sap-business-application-studio-or-sap-build-devspace-with-the-sap-hana-application-migration-assistant-extension-installed)
   - [Step-4: Migrate using the SAP HANA Application Migration Assistant](#step-4-migrate-using-the-sap-hana-application-migration-assistant)
   - [Step-5: Database post migration changes](#step-5-database-post-migration-changes)
   - [Step-6: Service Layer Migration](#step-6-service-layer-migration)
@@ -25,8 +25,8 @@
       - [service.js](#servicejs)
       - [custom-service.cds](#custom-servicecds)
       - [custom-service.js](#custom-servicejs)
-      - [handlers/](#handlers)
-    - [Tips \& Tricks](#tips--tricks)
+      - [handlers](#handlers)
+    - [Tips](#tips)
   - [Step-7: Deployment of the Migrated database artifacts](#step-7-deployment-of-the-migrated-database-artifacts)
   - [Data Migration](#data-migration)
   - [Known Issues in SAP HANA Application Migration Assistant](#known-issues-in-sap-hana-application-migration-assistant)
@@ -82,8 +82,7 @@ HCO_DEMOCONTENT follows the XS Classic Programming Model(XSC) and uses SAP HANA 
     - `SAP Hana Cloud` and
     - `SAP Hana Schemas and HDI Containers`
   - Subscription
-    - **SAP Business Application Studio** 
-    - Or **SAP Build Code** is required if you want to convert the service layer as well, since GenAI capabilities are only available in SAP Build Code.
+    - **SAP Business Application Studio** or **SAP Build.**  SAP Build is required if you want to convert the service layer as well, since GenAI capabilities are only available in SAP Build plans.
 - SAP Cloud Connector
 
 ## Where to Start
@@ -91,7 +90,7 @@ To successfully migrate the HCO_DEMOCONTENT sample delivery unit using the SAP H
 
 1. Install and configure the SAP Cloud Connector.
 2. Setup an SAP BTP Destination to connect to the source system.
-3. Create a Dev Space in either SAP Business Application Studio or SAP Build Code with SAP HANA Application Migration Assistant extension installed.
+3. Create a Dev Space in either SAP Business Application Studio or SAP Build with SAP HANA Application Migration Assistant extension installed.
 4. Migrate using the SAP HANA Application Migration Assistant.
 5. Database post migration changes.
 6. Service Layer post migration changes.
@@ -172,14 +171,14 @@ And the following additional properties:
 	<img src="images\destination4.png" width="600" height="400">
 </p>
 
-## Step-3: Create a SAP Business Application Studio or SAP Build Code Devspace with the SAP HANA Application Migration Assistant Extension installed  
+## Step-3: Create a SAP Business Application Studio or SAP Build Devspace with the SAP HANA Application Migration Assistant Extension installed  
 	
-1. In the SAP BTP subaccount where you created the destination, establish a subscription to SAP Business Application Studio (BAS) or SAP Build Code. Choose SAP Build Code if you intend to convert the Service Layer.
+1. In the SAP BTP subaccount where you created the destination, establish a subscription to SAP Business Application Studio (BAS) or SAP Build. Choose SAP Build if you intend to convert the Service Layer.
 
-> [!IMPORTANT]  
-> Service Layer migration leverages Generative AI capabilities, which are available only in SAP Build Code.
+> [!IMPORTANT] 
+> Service Layer migration leverages Generative AI capabilities, which are available only in SAP Build plans.
 
-2. Open SAP Business Application studio or SAP Build Code from the subscription and select "Create Dev Space". Assign a desired name to your Dev Space and select the "Full Stack Cloud Application" type. Then, choose the `SAP HANA Application Migration Assistant` Extension to help with migration, as well as the `SAP Hana Tools` Extension which will be required later for deployment. Finally, click on "Create Dev Space".
+2. Open SAP Business Application studio or SAP Build from the subscription and select "Create Dev Space". Assign a desired name to your Dev Space and select the "Full Stack Cloud Application" type. Then, choose the `SAP HANA Application Migration Assistant` Extension to help with migration, as well as the `SAP Hana Tools` Extension which will be required later for deployment. Finally, click on "Create Dev Space".
    
 3. Wait for the status of your newly created Dev Space to change to "Running". Once it's running, you can open it by clicking on the name of the Dev space that you just created.
    
@@ -249,7 +248,7 @@ And the following additional properties:
 10. Select "Yes" if you would like to convert Service Layer using GenAI capabilities.
     
 > [!IMPORTANT]  
-> Service Layer conversion is available only in SAP Build Code. 
+> Service Layer conversion is available only in SAP Build plans. 
 > This feature is currently experimental and free, but is subject to change in the future
 
 <p align="center">
@@ -421,7 +420,7 @@ Once the project is created, there are some adjustments we need to make manually
     }
     ```
  7. Adjust SQL syntax in procedures. For instance, "UPDATE FROM" should be changed to "MERGE INTO", and "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
- 8. Currently, changes to Flowgraph, Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
+ 8. Currently, changes to Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
  9.  Series entity is not supported in Hana Cloud so they will be removed by the extension. Please check [Migration Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/series-data%22) for more information.
  10. For HdbSynonym, HdbSynonymconfig and Hdbrole files, please check target object parameters before deployment.
      - In `db/cfg/models/synonym-grantor-service.hdbsynonymconfig` file, Change the `target.object` from `sap.hana.democontent.epm.models::SALES_ORDER_RANKING` to `SAP_HANA_DEMOCONTENT_EPM_MODELS_SALES_ORDER_RANKING`.
@@ -430,7 +429,8 @@ Once the project is created, there are some adjustments we need to make manually
 
 ## Step-6: Service Layer Migration
 
-While the assistant automates a large portion of the migration process, the converted output is not guaranteed to be 100% runnable or semantically equivalent. Manual validation and adjustments are essential to reach production readiness.
+> [!CAUTION]
+> While the assistant automates a large portion of the migration process, the converted output is not guaranteed to be 100% runnable or semantically equivalent. Manual validation and adjustments are essential to reach production readiness.
 
 ### Conversion structure
 The Gen-AI Migration Assistant converts SAP XS files and components into their equivalent SAP CAP service definitions and handlers, preserving structure and logic for ease of validation and enhancement.
@@ -534,22 +534,38 @@ The following steps are critical to ensure the converted project builds and runs
 - Ensure all custom logic handlers are correctly implemented and bound.
 - Replace or refactor placeholder logic (if any) added by the migration assistant.
 
- #### handlers/
+#### handlers
 
- - Confirm that all converted xsjs/xsjslib files are present.
+- Confirm that all converted xsjs/xsjslib files are present.
+  
+-  Import paths may be incorrect after migration. Review and adjust the import paths in your `.js` files to ensure all modules and handlers are correctly referenced.
 
- - Each file must export a function that binds to its relevant service events. In ES6 script there are multiple ways in which a function or a file can be imported or exported. Please review all the exports done in each file and make sure that they are imported correctly in other files.
+- Each file must export a function that binds to its relevant service events. In ES6 script there are multiple ways in which a function or a file can be imported or exported. Please review all the exports done in each file and make sure that they are imported correctly in other files.
 
- - If the original `.xsjs` code contains raw SQL statements, these may reference tables, views, or columns using SAP HANA naming. But in SAP HANA Cloud, naming conventions follow uppercase with underscores. Review and adjust any raw SQL queries in the code to align with the actual object names referring to migrated db artifacts. Reference DB migration report for the converted/ renames entities.
+| Exports | Imports | Ways to call |
+| --- | --- | --- |
+| `export default function;` | `import function from "./file.js";` | `function();` |
+| `export default {function1, function2};` | `import file  from "./file.js";` |  `file.function1(); file.function2();` |
+| `export async function function1(){};` | `import {function1, function2} from "./file.js";`  | `function1(); function2();` |
+| `export { function1, function2 };` | `import * as file from "./file.js;"`   | `file.function1(); file.function2();`|
+| `export { function1, function2 };` | `import {function1, function2} from "./file.js";` | `function1(); function2();` |
+	
+- If the original `.xsjs` code contains raw SQL statements, these may reference tables, views, or columns using SAP HANA naming. But in SAP HANA Cloud, naming conventions follow uppercase with underscores. Review and adjust any raw SQL queries in the code to align with the actual object names referring to migrated db artifacts. Reference DB migration report for the converted/ renames entities.
 
- - Verify functionality by comparing with original `.xsjs`  and `.xsjslib` logic. Some constructs (e.g., response manipulation, error handling) require adaptation to CAP's async/event model.
+- Verify functionality by comparing with original `.xsjs`  and `.xsjslib` logic. Some constructs (e.g., response manipulation, error handling) require adaptation to CAP's async/event model.
 
 
-### Tips & Tricks
+### Tips
 
 - Run `cds lint` to catch syntax and model issues early.
 
 - Use `cds watch` during development for hot-reloading and fast testing.
+
+- The entry point for the service layer is `index.cds`. You can use this file as a starting point to troubleshoot Node.js related issues. To isolate problems:
+  - Use Node.js debuggers.
+  - Temporarily comment out services in `index.cds` one by one to identify which service is causing the failure.
+  
+- *Unexpected Reserved Keyword* is a frequently encountered issue. This typically occurs when `async` and `await` are used incorrectly. For example, using await outside of an async function or misplacing the async keyword in handler definitions.
 
 - For security, define `@requires` annotations and configure `xs-security.json` accordingly.
 
@@ -625,9 +641,8 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
 4. [SAP HANA Cloud, SAP HANA Database Developer Guide for Cloud Foundry Multitarget Applications (SAP Business App Studio)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-developer-guide-for-cloud-foundry-multitarget-applications-sap-business-app-studio/sap-hana-cloud-sap-hana-database-developer-guide-for-cloud-foundry-multitarget-applications-sap-business-app-studio)
 
 ## How to obtain support
-[Create an issue](https://github.com/SAP-samples/xsc-cap-migration/issues) in this repository if you find a bug or have questions about the content.
- 
-For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
+
+If you find a bug or have a question about the steps raise ticket under component *BC-XS-TLS-MIG.* For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
 
 ## License
 Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
