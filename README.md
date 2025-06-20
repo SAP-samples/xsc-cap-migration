@@ -178,13 +178,21 @@ And the following additional properties:
 > [!IMPORTANT] 
 > Service Layer migration leverages Generative AI capabilities, which are available only in SAP Build plans.
 
-2. Open SAP Business Application studio or SAP Build from the subscription and select "Create Dev Space". Assign a desired name to your Dev Space and select the "Full Stack Cloud Application" type. Then, choose the `SAP HANA Application Migration Assistant` Extension to help with migration, as well as the `SAP Hana Tools` Extension which will be required later for deployment. Finally, click on "Create Dev Space".
+2. Open SAP Business Application studio or SAP Build subscription.
+
+3. If selecting SAP Build, it will take it to lobby page. From there switch to Dev space manager.
+
+<p align="center">
+	<img src="images\build_lobby.png">
+</p> 
    
-3. Wait for the status of your newly created Dev Space to change to "Running". Once it's running, you can open it by clicking on the name of the Dev space that you just created.
+4. Select "Create Dev Space". Assign a desired name to your Dev Space and select the "Full Stack Cloud Application" type. Then, choose the `SAP HANA Application Migration Assistant` Extension to help with migration, as well as the `SAP Hana Tools` Extension which will be required later for deployment. Finally, click on "Create Dev Space".
    
-4. Navigate to the folder by clicking on File -> Open Folder. Enter the path `/home/user/projects/` and click on OK.
+5. Wait for the status of your newly created Dev Space to change to "Running". Once it's running, you can open it by clicking on the name of the Dev space that you just created.
    
-5. Once the folder opens, you can select the SAP HANA Application Migration Assistant from the Command Palette (You can access the Command Palette from View -> Command Palette).
+6. Navigate to the folder by clicking on File -> Open Folder. Enter the path `/home/user/projects/` and click on OK.
+   
+7. Once the folder opens, you can select the SAP HANA Application Migration Assistant from the Command Palette (You can access the Command Palette from View -> Command Palette).
 
 ## Step-4: Migrate using the SAP HANA Application Migration Assistant
 
