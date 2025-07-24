@@ -11,8 +11,9 @@ The following features and changes have been applied as part of the project conf
     - Setting up build configuration
     - Configuring comments
 
-**HANA native artifacts**
-  such as `hdbtable`, `hdbcalculationviews`, `hdbview`, and `hdbfunctions` are not directly read by CDS. Make the Object Known to CDS, proxy files are created with certain limitations.  
+**HANA native artifacts:**
+
+such as `hdbtable`, `hdbcalculationviews`, `hdbview`, and `hdbfunctions` are not directly read by CDS. Make the Object Known to CDS, proxy files are created with certain limitations.  
   _For more information, refer to the [SAP CAP Documentation](https://help.sap.com/docs/HANA_Cloud)._
 
 **HANA Native Artifact Conversion: .hdbdd to CAP CDS**
@@ -27,8 +28,10 @@ The migration assistant converts HANA native artifact `.hdbdd` files into SAP CA
 
 This ensures seamless migration of your HANA data definitions into the CAP environment, preserving structure and datatype compatibility.
 
-**Proxy entities** for calculation views are created in their respective folders under the `CDS folder`.  
-  For `hdbtables`, `hdbviews`, and `hdbfunctions`, proxies are created in the CDS folder with the prefix `Proxy_` followed by the object type and the extension `.cds`.
+**Proxy entities:** 
+
+for calculation views are created in their respective folders under the `CDS folder`.  
+For `hdbtables`, `hdbviews`, and `hdbfunctions`, proxies are created in the CDS folder with the prefix `Proxy_` followed by the object type and     the extension `.cds`.
 
 **Data type conversion** in calculation views:  
   - `date()` → `daydate()`  
