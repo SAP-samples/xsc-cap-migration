@@ -61,7 +61,7 @@ For `hdbtables`, `hdbviews`, and `hdbfunctions`, proxies are created in the CDS 
   The following configurations are supported using @sql.append in SAP CAP CDS: `Partitioning`, `Storagetype`, `Grouping`, and `Unload Priority`.
 
 **Indexes:**  
-  Based on the technical configuration in SAP HANA hdbcds, if indexes are enabled for a table, then respective index files are created under the `hdbindex` folder.
+  Based on the technical configuration in SAP HANA hdbdd, if indexes are enabled for a hdbtable, then respective index files are created under the `hdbindex` folder.
 
 **Fuzzy Search Indexes:**  
   If fuzzy search is enabled on a table or column, corresponding fuzzy search index files are generated under the `hdbindex` folder.
