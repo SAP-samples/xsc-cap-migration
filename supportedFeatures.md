@@ -15,6 +15,18 @@ The following features and changes have been applied as part of the project conf
   such as `hdbtable`, `hdbcalculationviews`, `hdbview`, and `hdbfunctions` are not directly read by CDS. Make the Object Known to CDS, proxy files are created with certain limitations.  
   _For more information, refer to the [SAP CAP Documentation](https://help.sap.com/docs/HANA_Cloud)._
 
+**HANA Native Artifact Conversion: .hdbdd to CAP CDS**
+
+The migration assistant converts HANA native artifact `.hdbdd` files into SAP CAP CDS format. During this process:
+
+- The tool parses the `.hdbdd` file and rewrites the content into CAP CDS syntax.
+- HANA Cloud and CAP-supported datatypes are mapped accordingly
+- Unsupported or deprecated datatypes are either omitted or replaced with the closest CAP equivalent.
+- Entity definitions, associations, and annotations are translated to CAP CDS constructs.
+- The resulting CDS files are compatible with SAP HANA Cloud and CAP data models.
+
+This ensures seamless migration of your HANA data definitions into the CAP environment, preserving structure and datatype compatibility.
+
 **Proxy entities** for calculation views are created in their respective folders under the `CDS folder`.  
   For `hdbtables`, `hdbviews`, and `hdbfunctions`, proxies are created in the CDS folder with the prefix `Proxy_` followed by the object type and the extension `.cds`.
 
