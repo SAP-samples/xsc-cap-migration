@@ -619,8 +619,6 @@ For migration of data using the SAP HANA Application Migration Assistant, please
 ## Known Issues in SAP HANA Application Migration Assistant
 
 **Database:**
-- If the package name provided does not exist in the source system, the migration process will still continue without any disruption. In this case, a template project without any artifacts will be created.
-- In the SAP HANA Application Migration Assistant, even if you change your password after a successful login, it will not update in the environment even though it appears updated in the user interface. The Assistant retrieves it from the environment and the Migration proceeds without issue. If you wish to confirm the password change, after altering the password field, simply click the login button. This will update the password in the environment.
 - Some artifacts which are currently not supported in the SAP HANA Application Migration Assistant require manual remodeling before deployment. You can find detailed information on manually migrating these artifacts in the following [link](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool).
 
 **Service Layer:**
@@ -638,9 +636,11 @@ For a detailed list of the features supported by the SAP HANA Application Migrat
    
 1. Creating proxy cds for cross container schema
    
-2. Following Artifacts are not currently supported '.hdbreptask', '.hdbvirtualtable'
+2. Following Artifacts are not currently supported '.hdbreptask'.
 
-3. If the source files have any errors, the migration of the Delivery Unit or Package by the SAP HANA Application Migration Assistant will fail. For example: If the javascript files have unknown characters like ```NUL```, the migration will fail with errors. Please check the output logs for the error messages.
+3. For Virtual table, refer [VirtualTable.md](VirtualTable.md)
+
+4. If the source files have any errors, the migration of the Delivery Unit or Package by the SAP HANA Application Migration Assistant will fail. For example: If the javascript files have unknown characters like ```NUL```, the migration will fail with errors. Please check the output logs for the error messages.
 
 ## Learning Resources
 1. [Prepare XS Classic Artifacts for Migration](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/a759b4815ae246649c83365cbcede79b.html).
