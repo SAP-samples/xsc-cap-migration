@@ -72,7 +72,7 @@ SAP HANA Interactive Education or SHINE is a demo application that is packaged a
 HCO_DEMOCONTENT follows the XS Classic Programming Model(XSC) and uses SAP HANA on-premise for the database. This article describes the steps to be followed to migrate this Delivery Unit from XS Classic to the SAP Cloud Application Programming Model(CAP) with SAP HANA Cloud as the database along with service layer using the SAP HANA Application Migration Assistant.
 
 <p align="center">
-<img src="images\SolutionDiagramNew.png">
+<img src="images\SAPHAMASD.png">
 </p>
 
 ## Requirements
