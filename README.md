@@ -616,6 +616,9 @@ The following steps are critical to ensure the converted project builds and runs
 ## Data Migration
 For migration of data using the SAP HANA Application Migration Assistant, please refer to the [DataMigration](DataMigration.md) document.
 
+## Staged Migration
+In case if we have dependent objects outside our application like an external hdi container or schema, we need to migrate via staged migration. For further information, please refer [Staged Migration](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/954fd85b616b48a9b09a2f9b471eef41.html) documentation.
+
 ## Known Issues in SAP HANA Application Migration Assistant
 
 **Database:**
