@@ -286,7 +286,7 @@ please refer to [xscCompatibilitymode](https://help.sap.com/docs/hana-cloud-data
 </p>
 
 
-13. If non-staged migration is selected, no other further steps are required. Click Finish. In case staged migration is selected, a new prompt to check whether we need to upload a configuration file including external dependencies or not. Choose "Yes" or "No" accordingly. By default, "No" will be selected.
+13. If non-staged migration is selected, no other further steps are required. Click Finish. In case staged migration is selected, a new prompt appears to check whether we need to upload a configuration file including external dependencies or not. Choose "Yes" or "No" accordingly. By default, "No" will be selected.
 
 <p align="center">
 <img width="545" alt="end" src="images\stagedMigration2.png">
