@@ -277,9 +277,34 @@ In the SAP HANA Application Migration Assistant, the UI provides a drop down wit
  	<li>False: Sets the value to false and adopts the native XSA behaviour</li>
   	<li>Default: Retain the existing values for all CVs</li>
 
-please refer to [xsCompatibilitymode](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-modeling-guide-for-sap-business-application-studio/70d331c824b5460b82c1fb7f9919ee18.html?q=compatibility).
+please refer to [xscCompatibilitymode](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-modeling-guide-for-sap-business-application-studio/70d331c824b5460b82c1fb7f9919ee18.html?q=compatibility).
 
-11. When a notification appears in the bottom-right corner of your screen, it indicates that the migration process has started. This notification will provide real-time updates throughout the process. 
+12. Select Migration type. By default, "Non-staged Migration" is chosen. In case if we have dependent objects outside our application like an external hdi container or schema, we need to migrate via staged migration. For further information, please refer https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/954fd85b616b48a9b09a2f9b471eef41.html.
+
+<p align="center">
+<img width="545" alt="end" src="images\StagedMigration1.png">
+</p>
+
+
+13. If non-staged migration is selected, no other further steps are required. Click Finish. In case staged migration is selected, a new prompt to check whether we need to upload a configuration file including external dependencies or not. Choose "Yes" or "No" accordingly. By default, "No" will be selected.
+
+<p align="center">
+<img width="545" alt="end" src="images\stagedMigration2.png">
+</p>
+
+14. If you choose "No", no further steps are required. Click "Finish" button.
+
+15. If you choose "Yes", the prompt to browse configuration file must be visible. Choose the appropriate configuration file from the devspace. Choose a valid json file for the configuration file in the devspace. Click "Finish" button.
+
+<p align="center">
+<img width="545" alt="end" src="images\stagedMigration3.png">
+</p>
+
+<p align="center">
+<img width="545" alt="end" src="images\stagedMigration4.png">
+</p>
+
+16. When a notification appears in the bottom-right corner of your screen, it indicates that the migration process has started. This notification will provide real-time updates throughout the process. 
 At the end of the migration, a SAP CAP project will be generated, containing:
     -  Revised database artifacts
     -  The service layer (if service layer conversion was selected)
