@@ -279,7 +279,7 @@ In the SAP HANA Application Migration Assistant, the UI provides a drop down wit
 
 please refer to [xscCompatibilitymode](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-modeling-guide-for-sap-business-application-studio/70d331c824b5460b82c1fb7f9919ee18.html?q=compatibility).
 
-12. Select Migration type. By default, "Non-staged Migration" is chosen. In case if we have dependent objects outside our application like an external hdi container or schema, we need to migrate via staged migration. For further information, please refer https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/954fd85b616b48a9b09a2f9b471eef41.html.
+12. Select Migration type. By default, "Non-staged Migration" is chosen. In case if we have dependent objects outside our application like an external hdi container or schema, we need to migrate via staged migration. For further information, please refer [Staged Migration](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/954fd85b616b48a9b09a2f9b471eef41.html).
 
 <p align="center">
 <img width="545" alt="end" src="images\stagedMigration1.png">
