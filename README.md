@@ -282,7 +282,7 @@ please refer to [xscCompatibilitymode](https://help.sap.com/docs/hana-cloud-data
 12. Select Migration type. By default, "Non-staged Migration" is chosen. In case if we have dependent objects outside our application like an external hdi container or schema, we need to migrate via staged migration. For further information, please refer https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/954fd85b616b48a9b09a2f9b471eef41.html.
 
 <p align="center">
-<img width="545" alt="end" src="images\StagedMigration1.png">
+<img width="545" alt="end" src="images\stagedMigration1.png">
 </p>
 
 
