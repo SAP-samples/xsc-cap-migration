@@ -285,6 +285,7 @@ please refer to [xscCompatibilitymode](https://help.sap.com/docs/hana-cloud-data
 <img width="545" alt="end" src="images\stagedMigration1.png">
 </p>
 
+**Staged Migration** is used when there are objects in our container which have dependent objects in other hdi containers or external schemas. If all the objects required for deployment are present in our container, a **non-staged migration** would suffice.
 
 13. If you choose "Yes", the prompt to browse configuration file must be visible. Choose the appropriate configuration file from the devspace. Choose a valid json file for the configuration file in the devspace. Click "Finish" button.
 
@@ -295,6 +296,7 @@ please refer to [xscCompatibilitymode](https://help.sap.com/docs/hana-cloud-data
 <img width="545" alt="end" src="images\stagedMigration3.png">
 </p>
 
+### Preview of configuration file
 <p align="center">
 <img width="545" alt="end" src="images\stagedMigration4.png">
 </p>
