@@ -285,7 +285,7 @@ please refer to [xscCompatibilitymode](https://help.sap.com/docs/hana-cloud-data
 <img width="545" alt="end" src="images\stagedMigration1.png">
 </p>
 
-**Staged Migration** is used when there are objects in our container which have dependent objects in other hdi containers or external schemas. In this case, separate hdbsynonyms, hdbsynonymconfigs and hdbgrants will be created for each external hdi container and external schema, the objects in our application depend upon. If all the objects required for deployment are present in our container, a **non-staged migration** would suffice.
+**Staged Migration** is used when there are objects in our container which have dependent objects in other hdi containers or external schemas. In the case of staged migration, separate hdbsynonyms, hdbsynonymconfigs and hdbgrants will be created for each external hdi container and external schema, the objects in our application depend upon. If all the objects required for deployment are present in our container, a **non-staged migration** would suffice.
 
 13. If you choose "Yes", the prompt to browse configuration file must be visible. Choose the valid json file from the devspace. Click "Finish" button. 
 
