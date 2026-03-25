@@ -106,8 +106,8 @@ Before starting the migration process in Visual Studio Code, ensure you have the
 #### 2.2 Enter Source System Details
 
 1. **Enter Host and Port Details**
-   - **Enter SAP HANA Host Name**: Migration user username
-   - **Enter SAP HANA Port Number**: Migration user password
+   - **Enter SAP HANA Host Name**: SAP HANA host name or IP address
+   - **Enter SAP HANA Port Number**: SAP HANA port number (typically 3XX15 for tenant databases)
 2. **Enter Database Credentials**
    - **Enter the SAP HANA Database Migration User Name**: Migration user username
    - **Enter the SAP HANA Database Migration User Password**: Migration user password
@@ -303,7 +303,7 @@ Follow [README.md - Step 7: Deployment](README.md#step-7-deployment-of-the-migra
 
 ## Next Steps
 
-- **Data Migration**: See [DataMigration.md](DataMigration.md) for data migration procedures
+- **Data Migration**: See [DataMigration-VSCode.md](DataMigration-VSCode.md) for data migration procedures
 - **Deployment**: Deploy artifacts to SAP HANA Cloud
 - **Testing**: Validate migrated functionality
 - **Optimization**: Review and optimize generated code
@@ -312,7 +312,7 @@ Follow [README.md - Step 7: Deployment](README.md#step-7-deployment-of-the-migra
 - [SAP Hana Application Migration Vscode](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/migrate-xs-classic-application-to-sap-cap-and-sap-hana-cloud-with-sap-hana-application-migration-assistant-in-visual-studio-code)
 - [Main README](README.md) - Complete migration guide
 - [Supported Features](supportedFeatures.md) - List of supported artifacts
-- [Data Migration Guide](DataMigration.md) - Data migration procedures
+- [Data Migration Guide](DataMigration-VSCode.md) - Data migration procedures
 - [SAP HANA Cloud Migration Guide](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide)
 - [SAP CAP Documentation](https://cap.cloud.sap/docs/)
 
