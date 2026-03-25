@@ -20,9 +20,9 @@ This guide provides step-by-step instructions for migrating SAP HANA XS Classic 
 
 The following diagram illustrates the migration architecture when using Visual Studio Code:
 
-<p align="center">
-<img src="images/SAP_HAMA.png" alt="VS Code Migration Architecture">
-</p>
+   <p align="center">
+   <img src="images/SAP_HAMA.png" alt="VS Code Migration Architecture">
+   </p>
 
 ## Prerequisites
 
@@ -72,9 +72,9 @@ Before starting the migration process in Visual Studio Code, ensure you have the
    - Click on the extension in the search results
    - Click the **Install** button
 
-<p align="center">
-<img src="images/extvsc.png" alt="Installing SAP HANA Application Migration Extension" width="700">
-</p>
+      <p align="center">
+      <img src="images/extvsc.png" alt="Installing SAP HANA Application Migration Extension" width="700">
+      </p>
 
 5. **Verify Installation**
    - After installation, the extension should appear in your installed extensions list
@@ -99,9 +99,9 @@ Before starting the migration process in Visual Studio Code, ensure you have the
 
 1. When the Migration extension Wizard opens, select the migration path. Since we are migrating from XS Classic to SAP CAP, select `XSC to CAP` as your migration path.	
 
-<p align="center">
-<img src="images\homescreen1.png" width="600">
-</p>
+      <p align="center">
+      <img src="images\homescreen1.png" width="600">
+      </p>
 
 #### 2.2 Enter Source System Details
 
@@ -116,16 +116,17 @@ Before starting the migration process in Visual Studio Code, ensure you have the
 
 3. **Click Login** to authenticate
 
-<p align="center">
-<img src="images/loginvsc.png" width="600">
-</p>
+      <p align="center">
+      <img src="images/loginvsc.png" width="600">
+      </p>
 
 4. **Verify Connection**
+
    - Once authenticated, you'll see a success message
 
-<p align="center">
-<img src="images/loginEnabled.png" width="600">
-</p>
+      <p align="center">
+      <img src="images/loginEnabled.png" width="600">
+      </p>
 
 #### 2.3 Select Source Type
 
@@ -133,25 +134,25 @@ Before starting the migration process in Visual Studio Code, ensure you have the
    - **Delivery Unit**: For DU-packaged applications
    - **Package Name**: For package-level migration
 
-<p align="center">
-<img src="images/selectTypevsc.png" width="600">
-</p>
+      <p align="center">
+      <img src="images/selectTypevsc.png" width="600">
+      </p>
 
 2. **Enter Source Identifier**
    
    - **Select Source Delivery Unit**: Select DU name (e.g., `HCO_DEMOCONTENT`)
    
-   <p align="center">
-   <img src="images/DeliveryUnitVSC.png" width="600">
-   </p>
+      <p align="center">
+      <img src="images/DeliveryUnitVSC.png" width="600">
+      </p>
    
    - **For Package**: Enter package name with include subpackages flag
      - Format: `package.name:true` or `package.name:false`
      - Example: `sap.hana.democontent.epm.data:true`
    
-   <p align="center">
-   <img src="images/packagevsc.png" width="600">
-   </p>
+      <p align="center">
+      <img src="images/packagevsc.png" width="600">
+      </p>
 
 #### 2.4 Configure Target Settings
 
@@ -183,9 +184,9 @@ Before starting the migration process in Visual Studio Code, ensure you have the
    - Browse to your staged migration configuration JSON file
    - See [Staged Migration documentation](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/954fd85b616b48a9b09a2f9b471eef41.html) for details
 
-   <p align="center">
-   <img src="images/stagedvsc.png" width="600">
-   </p>
+      <p align="center">
+      <img src="images/stagedvsc.png" width="600">
+      </p>
 
    **Example Configuration File:**
    ```json
@@ -209,9 +210,9 @@ Before starting the migration process in Visual Studio Code, ensure you have the
 
 1. **Service Layer Migration**
     - Select ***Yes*** for service layer migration. Service layer migration uses SAP generative-AI tools to convert XS objects to SAP CAP service definitions and custom handlers.
-   <p align="center">
-   <img src="images/srvvsc.png" width="600">
-   </p>
+      <p align="center">
+      <img src="images/srvvsc.png" width="600">
+      </p>
 >[!NOTE]
 >An SAP AI Core instance & service key and the gpt-4o model are required for the service layer conversion. You can find more information about SAP AI Core API access [here](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/what-is-sap-ai-core?locale=en-US).
 
@@ -236,9 +237,9 @@ Before starting the migration process in Visual Studio Code, ensure you have the
      - View → Output
      - Select "SAP HANA Application Migration" from dropdown
 
-   <p align="center">
-   <img src="images/migvsc.png" width="600">
-   </p>
+      <p align="center">
+      <img src="images/migvsc.png" width="600">
+      </p>
 
 4. **Migration Complete**
    - The extension will generate:
