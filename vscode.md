@@ -55,11 +55,14 @@ Before starting the migration process in Visual Studio Code, ensure you have the
 2. **Open Extensions View**
    - Click on the Extensions icon in the Activity Bar (left sidebar)
    - Or press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS)
+     
+    Install from Visual Studio Code Market Place
+   - [SAP HANA Application Migration](https://marketplace.visualstudio.com/items?itemName=SAPSE.xs-migration-bas-extn)
 
-3. **Search for the Extension**
+4. **Search for the Extension**
    - Type `SAP HANA Application Migration Extension` in the search box
 
-4. **Install the Extension**
+5. **Install the Extension**
    - Click on the extension in the search results
    - Click the **Install** button
 
@@ -67,7 +70,7 @@ Before starting the migration process in Visual Studio Code, ensure you have the
       <img src="images/extvsc.png" alt="Installing SAP HANA Application Migration Extension" width="700">
       </p>
 
-5. **Verify Installation**
+6. **Verify Installation**
    - After installation, the extension should appear in your installed extensions list
    - You may need to reload VS Code
 
