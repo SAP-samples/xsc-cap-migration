@@ -363,55 +363,9 @@ Once the project is created, there are some adjustments we need to make manually
     }
     ```
  3. In addition, please take the time to clear out unused role names from the `default_access_role.hdbrole` file located in the db/src/defaults folder. If there are specific roles required for your project, ensure to add them as needed.
-    For the HCO_DEMOCONTENT project, Remove `SAP_HANA_DEMOCONTENT_EPM_MIGRATION_ALL_ANALYTIC_PRIV` role under names. 
-    
- 4. The extension will modify the name of the artifacts in your project. Therefore, ensure to update the references to these artifacts accordingly.
-    - For the HCO_DEMOCONTENT project, you'll need to adjust the references for entities under the `currencyConversionTables` tag. This is located in the `db/src/models/PURCHASE_COMMON_CURRENCY.hdbcalculationview` file. Make the changes as follows:
-
-      ```
-      <currencyConversionTables rates="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURR" configuration="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURV" prefactors="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURF" notations="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURN" precisions="SAP_HANA_DEMOCONTENT_EPM_DATA_CONVERSIONS_TCURX"/>
-      ```
-    - In the `db/src/models/AP_PURCHASE_ORDER_PROD_CAT_2.hdbanalyticprivilege` file, please change the `ProductCategory` in the filter tag to `CATEGORY`
-
- 5.  Unused configurations should be removed from hdbrole files, or these files should be adjusted to add supported options.
+    For the HCO_DEMOCONTENT project, Remove `SAP_HANA_DEMOCONTENT_EPM_MIGRATION_ALL_ANALYTIC_PRIV` role under names.  
+ 4.  Unused configurations should be removed from hdbrole files, or these files should be adjusted to add supported options.
      For the HCO_DEMOCONTENT project, make the following alterations:
-     - In `db/src/roles/User.hdbrole`, eliminate the following unused configurations:
-       ```
-       {
-    	 "reference": "_SYS_BIC",
-    	 "privileges": [
-            "EXECUTE",
-            "SELECT"
-    	 ]
-       },
-       {
-    	 "reference": "_SYS_REPO",
-    	 "privileges": [
-            "EXECUTE",
-            "SELECT"
-    	 ]
-       },
-       {
-    	 "reference": "_SYS_RT",
-    	 "privileges": [
-            "SELECT"
-    	 ]
-       }
-       ```
-       **Reason**: During the deployment step, access permissions will be granted by executing certain SQL commands.
-       
-     - In `db/src/roles/Admin.hdbrole`, eliminate the following unused configurations:
-       ```
-       {
-    	 "name": "REPOSITORY_REST",
-    	 "type": "PROCEDURE",
-    	 "privileges": 
-         [
-            "EXECUTE"
-         ]
-       }
-       ```
-       **Reason**: Roles are not needed for executing procedures in the same container. Instead, you can add authorization based on users in SAP CAP.
      - Alter `db/src/roles/Admin.hdbrole` by replacing the existing schema privileges and adding schema analytic privileges:
        ```
        "schema_privileges": [
@@ -467,13 +421,10 @@ Once the project is created, there are some adjustments we need to make manually
       }
     }
     ```
- 7. Adjust SQL syntax in procedures. For instance, "UPDATE FROM" should be changed to "MERGE INTO", and "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
+ 7. Adjust SQL syntax in procedures. For instance, "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
  8. Currently, changes to Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
  9.  Series entity is not supported in Hana Cloud so they will be removed by the extension. Please check [Migration Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/series-data%22) for more information.
  10. For HdbSynonym, HdbSynonymconfig and Hdbrole files, please check target object parameters before deployment.
-     - In `db/cfg/models/synonym-grantor-service.hdbsynonymconfig` file, Change the `target.object` from `sap.hana.democontent.epm.models::SALES_ORDER_RANKING` to `SAP_HANA_DEMOCONTENT_EPM_MODELS_SALES_ORDER_RANKING`.
-     - In `db/src/roles/Admin.hdbrole` file, Change the role name from `sap.hana.democontent.epm.roles::Admin` to `SAP_HANA_DEMOCONTENT_EPM_ROLES_ADMIN`.
-     - In `db/src/roles/User.hdbrole` file, Change the role name from `sap.hana.democontent.epm.roles::User` to `SAP_HANA_DEMOCONTENT_EPM_ROLES_USER`.
 
 ## Step-6: Service Layer Migration
 
