@@ -410,7 +410,7 @@ Once the project is created, there are some adjustments we need to make manually
        ],
        ```
        **Reason**: The modifications in the hdbrole file are needed to access calculation views with analytic privileges.
- 6. Assign the permission to users with the admin role for accessing the schema.
+ 5. Assign the permission to users with the admin role for accessing the schema.
     For the HCO_DEMOCONTENT project, create an `Admin.hdbroleconfig` file in the `db/src/roles/` directory. The file should contain the following configuration:
     ```
     {
@@ -421,10 +421,10 @@ Once the project is created, there are some adjustments we need to make manually
       }
     }
     ```
- 7. Adjust SQL syntax in procedures. For instance, "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
- 8. Currently, changes to Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
- 9.  Series entity is not supported in Hana Cloud so they will be removed by the extension. Please check [Migration Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/series-data%22) for more information.
- 10. For HdbSynonym, HdbSynonymconfig and Hdbrole files, please check target object parameters before deployment.
+ 6. Adjust SQL syntax in procedures. For instance, "TRUNCATE" statements should be replaced with "DELETE FROM" statements.
+ 7. Currently, changes to Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
+ 8.  Series entity is not supported in Hana Cloud so they will be removed by the extension. Please check [Migration Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/series-data%22) for more information.
+ 9. For HdbSynonym, HdbSynonymconfig and Hdbrole files, please check target object parameters before deployment.
 
 ## Step-6: Service Layer Migration
 
