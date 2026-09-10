@@ -425,6 +425,7 @@ Once the project is created, there are some adjustments we need to make manually
  7. Currently, changes to Reptask, and Replication artifacts are not covered. You will need to modify these manually. Unsupported types and functions in the calculation view such as "CE_FUNCTION", "CACHE", etc., need to be noted. Please refer to the [SAP HANA Cloud Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool) for more details on how to handle these.
  8.  Series entity is not supported in Hana Cloud so they will be removed by the extension. Please check [Migration Documentation](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/series-data%22) for more information.
  9. For HdbSynonym, HdbSynonymconfig and Hdbrole files, please check target object parameters before deployment.
+ 10. Remove the synonym-grantor-service from the mta.yaml before deployment.
 
 ## Step-6: Service Layer Migration
 
