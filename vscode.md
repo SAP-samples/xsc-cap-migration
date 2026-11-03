@@ -305,8 +305,8 @@ After=network.target
 
 [Service]
 ExecStart=/usr/bin/socat \
-    TCP-LISTEN:30015,fork,reuseaddr \
-    TCP:xsnew.xsmig.c.eu-de-2.cloud.sap:30015
+    TCP-LISTEN:<hana-port>,fork,reuseaddr \
+    TCP:<hana-host>:<hana-port>
 Restart=always
 RestartSec=5
 
