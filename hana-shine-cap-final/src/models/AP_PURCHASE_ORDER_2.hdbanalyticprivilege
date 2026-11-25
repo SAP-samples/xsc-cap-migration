@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><Privilege:analyticPrivilege xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" schemaVersion="1.1" id="SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_PURCHASE_ORDER_2" privilegeType="SQL_ANALYTIC_PRIVILEGE">
-  <origin/>
-  <descriptions defaultDescription="AP_PURCHASE_ORDER_2"/>
-  <metadata changedAt="2023-09-29 10:54:03.313" createdAt="2023-09-29 10:54:03.313"/>
-  <securedModels>
-    <modelUri>SAP_HANA_DEMOCONTENT_EPM_MODELS_PURCHASE_COMMON_CURRENCY</modelUri>
-  </securedModels>
-</Privilege:analyticPrivilege>

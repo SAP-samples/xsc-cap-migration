@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><Privilege:analyticPrivilege xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" schemaVersion="1.1" id="SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_SALES_ORDER_14" privilegeType="SQL_ANALYTIC_PRIVILEGE">
-  <origin/>
-  <descriptions defaultDescription="AP_SALES_ORDER_14"/>
-  <metadata changedAt="2023-09-29 10:55:18.986" createdAt="2023-09-29 10:55:18.986"/>
-  <securedModels>
-    <modelUri>SAP_HANA_DEMOCONTENT_EPM_MODELS_SALESORDER_RANKING</modelUri>
-  </securedModels>
-</Privilege:analyticPrivilege>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><Privilege:analyticPrivilege xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" schemaVersion="1.1" id="SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_PURCHASE_ORDER" privilegeType="SQL_ANALYTIC_PRIVILEGE">
-  <descriptions defaultDescription="AP_PURCHASE_ORDER"/>
-  <metadata changedAt="2023-09-29 10:54:01.561"/>
-  <securedModels allInformationModels="false">
-    <modelUri>SAP_HANA_DEMOCONTENT_EPM_MODELS_PO_WORKLIST</modelUri>
-  </securedModels>
-</Privilege:analyticPrivilege>

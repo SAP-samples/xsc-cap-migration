@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><Privilege:analyticPrivilege xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" schemaVersion="1.1" id="SAP_HANA_DEMOCONTENT_EPM_MODELS_AP_SALES_ORDER_5" privilegeType="SQL_ANALYTIC_PRIVILEGE">
-  <origin/>
-  <descriptions defaultDescription="AP_SALES_ORDER_5"/>
-  <metadata changedAt="2023-09-29 10:55:10.644" createdAt="2023-09-29 10:55:10.644"/>
-  <securedModels>
-    <modelUri>SAP_HANA_DEMOCONTENT_EPM_MODELS_SALES_ORDER_DYNAMIC_TIME_PERIOD</modelUri>
-  </securedModels>
-</Privilege:analyticPrivilege>
