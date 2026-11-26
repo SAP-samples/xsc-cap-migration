@@ -1,7 +1,0 @@
-{
-    "SAP_HANA_DEMOCONTENT_EPM_ROLES_ADMIN": {
-        "< Schema Name >": {
-            "schema": "< Schema Name >"
-        }
-    }
-}

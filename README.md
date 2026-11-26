@@ -330,7 +330,7 @@ At the end of the migration, a SAP CAP project will be generated, containing:
 </p>
 
 ## Step-5: Database post migration changes
-Once the project is created, there are some adjustments we need to make manually as these are not currently handled by the SAP HANA Application Migration. We have provided the changed files for [HCO_DEMOCONTENT](https://github.com/SAP-samples/xsc-cap-migration/tree/main/hana-shine-cap-final) for reference.
+Once the project is created, there are some adjustments we need to make manually as these are not currently handled by the SAP HANA Application Migration.
  1. If your project contains any files from a different schema, these need to be migrated before migrating the current Delivery Unit and included in this project. If this can't be done immediately, you can remove them for the time being. To utilize objects from other containers, please refer to the SAP HANA Cloud help documentation and configure accordingly.
     
     For the HCO_DEMOCONTENT project, make the following changes:

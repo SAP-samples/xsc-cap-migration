@@ -1,8 +1,0 @@
-FUNCTION "SAP_HANA_DEMOCONTENT_EPM_FUNCTIONS_APPLY_DISCOUNT" (im_price decimal(15,2), 
-                 im_discount decimal(15,2) ) 
-	RETURNS result decimal(15,2)
-	LANGUAGE SQLSCRIPT
-	SQL SECURITY INVOKER AS
-BEGIN
-result := :im_price - ( :im_price * :im_discount );
-END;
